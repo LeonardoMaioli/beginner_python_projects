@@ -1,6 +1,7 @@
 #Programa para gerenciar uma lista de contatos. Ele deve permitir adicionar, remover, buscar e atualizar informações de contato. Use um dicionário para armazenar os contatos, onde a chave é o nome e o valor é outro dicionário com detalhes como telefone e email.
 
 import os
+import time
 
 def mostrar_tela_inicial():
     limpar_tela()
@@ -66,6 +67,21 @@ escolha = 0
 while escolha != 6:
     mostrar_tela_inicial()
     escolha = int(input())
-    if escolha == 6:
+    if escolha == 1:
+        pass
+    elif escolha == 2:
+        pass
+    elif escolha == 3:
+        pass
+    elif escolha == 4:
+        pass
+    elif escolha == 5:
+        pass
+    elif escolha == 6:
         fechar_agenda()
+    else:
+        limpar_tela()
+        print(f"O comando {escolha} é inválido!")
+        print("Voltando para tela inicial em 5s...")
+        time.sleep(5)
 
