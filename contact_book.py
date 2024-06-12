@@ -59,15 +59,22 @@ def atualizar_contato(contatos):
     print("|---------------------------------------|")
     nome_antigo = input("Digite o nome do contato que deseja atualizar: ")
     if nome_antigo in contatos:
-        novo_nome = input("Digite o novo nome para o contato: ")
-        #Checar se nome já não está na agenda
-        novo_tel = input("Digite o novo telefone para o contato: ")
-        novo_email = input("Digite o novo email para o contato: ")
-        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)
-        #Remover apenas se o nome_antigo != do novo ou sempre? Pode remover o nome criado talvez
-        remover_contato(contatos, nome_antigo)
-        print("Contato atualizado com sucesso!")
-        print("Voltando para tela inicial em 3s...")
+        novo_nome = input("Digite o novo nome para o contato. Se quiser manter o mesmo, digite 1: ")
+        if novo_nome != 1 and novo_nome in contatos:
+            print("Esse nome já está sendo utilizado para outro contato!")
+            print("Voltando para tela inicial em 3s...")
+        else:
+            remove = 1
+            if novo_nome == '1': 
+                novo_nome = nome_antigo
+                remove = 0
+            novo_tel = input("Digite o novo telefone para o contato: ")
+            novo_email = input("Digite o novo email para o contato: ")
+            adicionar_contato(contatos, novo_nome, novo_tel, novo_email)
+            if remove == 1:
+                remover_contato(contatos, nome_antigo)
+            print("Contato atualizado com sucesso!")
+            print("Voltando para tela inicial em 3s...")
     else:
         print("Contato não encontrado!")
         print("Voltando para tela inicial em 3s...")
@@ -118,9 +125,9 @@ while escolha != 6:
     if escolha == 1:
         pesquisar_contato()
     elif escolha == 2:
-        adicionar_contato()
+        adicionar_contato(contatos)
     elif escolha == 3:
-        remover_contato()
+        remover_contato(contatos)
     elif escolha == 4:
         atualizar_contato(contatos)
     elif escolha == 5:
