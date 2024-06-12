@@ -30,11 +30,13 @@ def adicionar_contato(contatos, *args):
         contatos[args[0]] = {'Telefone': args[1], 'E-mail': args[2]}
     else:
         nome = input("Digite o nome do novo contato: ")
-        #Checar nome repetido
-        telefone = input("Digite o telefone do novo contato: ")
-        email = input("Digite o email do novo contato: ")
-        contatos[nome] = {'Telefone': telefone, 'E-mail': email}
-        print("Contato adicionado com sucesso!")
+        if nome in contatos:
+            print("Esse nome já está sendo usado em outro contato!")
+        else:
+            telefone = input("Digite o telefone do novo contato: ")
+            email = input("Digite o email do novo contato: ")
+            contatos[nome] = {'Telefone': telefone, 'E-mail': email}
+            print("Contato adicionado com sucesso!")
         print("Voltando para tela inicial em 3s...")
         time.sleep(3)
 
@@ -43,12 +45,17 @@ def remover_contato(contatos, *args):
         del contatos[args[0]]
     else:
         nome = input("Digite o nome do contato a ser removido: ")
-        #Checar se nome existe
-        #Mensagem de confirmação ("Tem certeza?")
-        del contatos[nome]
-        print("Contato removido com sucesso!")
+        if nome in contatos:
+            resposta = input(f"Tem certeza que deseja excluir {nome} dos contatos? (S/N): ")
+            if resposta == 'S':
+                del contatos[nome]
+                print("Contato removido com sucesso!")
+            else:
+                print("Cancelamento de contato abortado!")
+        else:
+            print(f"O nome {nome} não está na lista de contatos!")
         print("Voltando para tela inicial em 3s...")
-        time.sleep(3)
+    time.sleep(3)
 
 def atualizar_contato(contatos):
     limpar_tela()
