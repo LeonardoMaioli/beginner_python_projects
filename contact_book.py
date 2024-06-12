@@ -37,10 +37,28 @@ def remover_contato():
     #Remover contato e voltar a tela inicial (Mensagem de contato removido, esperar, voltar)
     pass
 
-def atualizar_contato():
+def atualizar_contato(contatos):
     #Pedir nome para atualização
     #Atualizar item específico ou todos? Receber novos dados, atualizar e voltar para tela inicial
-    pass
+    limpar_tela()
+    print(" --------------------------------------- ")
+    print("|          AGENDA DE CONTATOS           |")
+    print("|---------------------------------------|")
+    print("|       Atualização de um contato       |")
+    print("|---------------------------------------|")
+    nome_antigo = input("Digite o nome do contato que deseja atualizar: ")
+    if nome_antigo in contatos:
+        novo_nome = input("Digite o novo nome para o contato: ")
+        novo_tel = input("Digite o novo telefone para o contato: ")
+        novo_email = input("Digite o novo email para o contato: ")
+        adicionar_contato(novo_nome, novo_tel, novo_email)
+        remover_contato(nome_antigo)
+        print("Contato atualizado com sucesso!")
+        print("Voltando para tela inicial em 3s...")
+    else:
+        print("Contato não encontrado!")
+        print("Voltando para tela inicial em 3s...")
+    time.sleep(3)
 
 def listar_contatos(contatos):
     limpar_tela()
@@ -91,7 +109,7 @@ while escolha != 6:
     elif escolha == 3:
         remover_contato()
     elif escolha == 4:
-        atualizar_contato()
+        atualizar_contato(contatos)
     elif escolha == 5:
         listar_contatos(contatos)
     elif escolha == 6:
