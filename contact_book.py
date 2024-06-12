@@ -42,10 +42,25 @@ def atualizar_contato():
     #Atualizar item específico ou todos? Receber novos dados, atualizar e voltar para tela inicial
     pass
 
-def listar_contatos():
-    #Listar todos os contatos da agenda
-    #Oferecer opções da tela inicial aqui também, com exceção de listar. Adicionar opção de voltar a tela inicial
-    pass
+def listar_contatos(contatos):
+    limpar_tela()
+    print(" --------------------------------------- ")
+    print("|          AGENDA DE CONTATOS           |")
+    print("|---------------------------------------|")
+    print("|  Lista de contatos salvos na agenda   |")
+    print("|---------------------------------------|")
+
+    for nome, info in contatos.items():
+        escolha_lista = 0
+        print(f"Nome: {nome} \nTelefone: {info['Telefone']} \nE-mail: {info['E-mail']}")
+        print("---------------------------------------")
+    
+    voltar_tela_inicial = 0
+    while voltar_tela_inicial != 1:
+        voltar_tela_inicial = int(input("Digite 1 para voltar para tela inicial da agenda: "))
+    
+    print("Voltando para tela inicial em 3s...")
+    time.sleep(3)
 
 def fechar_agenda():
     limpar_tela()
@@ -62,21 +77,23 @@ def limpar_tela():
         os.system('clear')
 
 
+contatos = ({'Leonardo Maioli': {'Telefone': '27997723646', 'E-mail': 'leo.severgnine@gmail.com'}, 'Julyano': {'Telefone': '00000000000', 'E-mail': 'ju@gmail.com'}})
+
 escolha = 0
 
 while escolha != 6:
     mostrar_tela_inicial()
     escolha = int(input())
     if escolha == 1:
-        pass
+        pesquisar_contato()
     elif escolha == 2:
-        pass
+        adicionar_contato()
     elif escolha == 3:
-        pass
+        remover_contato()
     elif escolha == 4:
-        pass
+        atualizar_contato()
     elif escolha == 5:
-        pass
+        listar_contatos(contatos)
     elif escolha == 6:
         fechar_agenda()
     else:
