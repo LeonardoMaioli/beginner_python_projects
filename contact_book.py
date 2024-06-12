@@ -63,7 +63,7 @@ def atualizar_contato(contatos):
         #Checar se nome já não está na agenda
         novo_tel = input("Digite o novo telefone para o contato: ")
         novo_email = input("Digite o novo email para o contato: ")
-        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)]
+        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)
         #Remover apenas se o nome_antigo != do novo ou sempre? Pode remover o nome criado talvez
         remover_contato(contatos, nome_antigo)
         print("Contato atualizado com sucesso!")
