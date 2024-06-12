@@ -1,16 +1,21 @@
 #Programa para gerenciar uma lista de contatos. Ele deve permitir adicionar, remover, buscar e atualizar informações de contato. Use um dicionário para armazenar os contatos, onde a chave é o nome e o valor é outro dicionário com detalhes como telefone e email.
 
+import os
+
 def mostrar_tela_inicial():
-    """colocar título
-    colocar opções
-        - pesquisar contato por nome ou número
-        - adicionar contato
-        - remover contato
-        - atualizar contato
-        - listar todos os contatos
-        - fechar agenda
-        """
-    pass
+    limpar_tela()
+    print(" --------------------------------------- ")
+    print("|          AGENDA DE CONTATOS           |")
+    print("|---------------------------------------|")
+    print("|     Pesquisar Contato - Digite 1      |")
+    print("|     Adicionar Contato - Digite 2      |")
+    print("|     Remover Contato   - Digite 3      |")
+    print("|     Atualizar Contato - Digite 4      |")
+    print("|     Listar Contatos   - Digite 5      |")
+    print("|     Fechar Agenda     - Digite 6      |")
+    print(" --------------------------------------- ")
+    print("Digite sua escolha:")
+
 
 def pesquisar_contato():
     #Por qual item vai pesquisar?
@@ -42,11 +47,25 @@ def listar_contatos():
     pass
 
 def fechar_agenda():
-    #Encerrar o programa
-    pass
+    limpar_tela()
+    print(" --------------------------------------- ")
+    print("|          AGENDA DE CONTATOS           |")
+    print("|---------------------------------------|")
+    print("|  Agenda salva e fechada com sucesso!  |")
+    print(" --------------------------------------- ")
+
+def limpar_tela():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 escolha = 0
 
 while escolha != 6:
-    mostrar_tela_inicial()    
+    mostrar_tela_inicial()
+    escolha = int(input())
+    if escolha == 6:
+        fechar_agenda()
+
