@@ -38,11 +38,17 @@ def adicionar_contato(contatos, *args):
         print("Voltando para tela inicial em 3s...")
         time.sleep(3)
 
-def remover_contato():
-    #Pedir nome para remoção
-    #Mensagem de confirmação de exclusão
-    #Remover contato e voltar a tela inicial (Mensagem de contato removido, esperar, voltar)
-    pass
+def remover_contato(contatos, *args):
+    if args:
+        del contatos[args[0]]
+    else:
+        nome = input("Digite o nome do contato a ser removido: ")
+        #Checar se nome existe
+        #Mensagem de confirmação ("Tem certeza?")
+        del contatos[nome]
+        print("Contato removido com sucesso!")
+        print("Voltando para tela inicial em 3s...")
+        time.sleep(3)
 
 def atualizar_contato(contatos):
     limpar_tela()
@@ -57,7 +63,8 @@ def atualizar_contato(contatos):
         #Checar se nome já não está na agenda
         novo_tel = input("Digite o novo telefone para o contato: ")
         novo_email = input("Digite o novo email para o contato: ")
-        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)
+        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)]
+        #Remover apenas se o nome_antigo != do novo ou sempre? Pode remover o nome criado talvez
         remover_contato(contatos, nome_antigo)
         print("Contato atualizado com sucesso!")
         print("Voltando para tela inicial em 3s...")
