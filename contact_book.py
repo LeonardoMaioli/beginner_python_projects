@@ -25,11 +25,18 @@ def pesquisar_contato():
     #Oferecer opções da tela inicial e adicionar opção para voltar para tela inicial
     pass
 
-def adicionar_contato():
-    #Pedir nome, contato, email
-    #Verificar nomes iguais
-    #Adiconar contato e voltar a tela inicial (Mensagem de contato adicionado, esperar, voltar)
-    pass
+def adicionar_contato(contatos, *args):
+    if args:
+        contatos[args[0]] = {'Telefone': args[1], 'E-mail': args[2]}
+    else:
+        nome = input("Digite o nome do novo contato: ")
+        #Checar nome repetido
+        telefone = input("Digite o telefone do novo contato: ")
+        email = input("Digite o email do novo contato: ")
+        contatos[nome] = {'Telefone': telefone, 'E-mail': email}
+        print("Contato adicionado com sucesso!")
+        print("Voltando para tela inicial em 3s...")
+        time.sleep(3)
 
 def remover_contato():
     #Pedir nome para remoção
@@ -38,8 +45,6 @@ def remover_contato():
     pass
 
 def atualizar_contato(contatos):
-    #Pedir nome para atualização
-    #Atualizar item específico ou todos? Receber novos dados, atualizar e voltar para tela inicial
     limpar_tela()
     print(" --------------------------------------- ")
     print("|          AGENDA DE CONTATOS           |")
@@ -49,10 +54,11 @@ def atualizar_contato(contatos):
     nome_antigo = input("Digite o nome do contato que deseja atualizar: ")
     if nome_antigo in contatos:
         novo_nome = input("Digite o novo nome para o contato: ")
+        #Checar se nome já não está na agenda
         novo_tel = input("Digite o novo telefone para o contato: ")
         novo_email = input("Digite o novo email para o contato: ")
-        adicionar_contato(novo_nome, novo_tel, novo_email)
-        remover_contato(nome_antigo)
+        adicionar_contato(contatos, novo_nome, novo_tel, novo_email)
+        remover_contato(contatos, nome_antigo)
         print("Contato atualizado com sucesso!")
         print("Voltando para tela inicial em 3s...")
     else:
