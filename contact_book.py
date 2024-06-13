@@ -55,7 +55,7 @@ def remover_contato(contatos, *args):
         else:
             print(f"O nome {nome} não está na lista de contatos!")
         print("Voltando para tela inicial em 3s...")
-    time.sleep(3)
+        time.sleep(3)
 
 def atualizar_contato(contatos):
     limpar_tela()
