@@ -18,12 +18,28 @@ def mostrar_tela_inicial():
     print("Digite sua escolha:")
 
 
-def pesquisar_contato():
-    #Por qual item vai pesquisar?
-    #Receber item ou parte do item
-    #Mostrar resultados encontrados
-    #Oferecer opções da tela inicial e adicionar opção para voltar para tela inicial
-    pass
+def pesquisar_contato(contatos):
+    nome = input("Digite o nome do contato para pesquisa: ")
+    if nome in contatos:
+        print("Informações do contato:")
+        print(f"Nome: {nome} \nTelefone: {contatos[nome]['Telefone']} \nE-mail: {contatos[nome]['E-mail']}")
+        voltar_tela_inicial = 0
+        while voltar_tela_inicial != 1:
+            voltar_tela_inicial = int(input("Digite 1 para voltar para tela inicial da agenda: "))
+    else:
+        print("Nome de contato não encontrado na sua agenda telefônica!")
+        contatos_com_nome = [chave for chave in contatos if nome in chave]
+        if contatos_com_nome:
+            print(f"Segue a lista de contatos que possuem a sequência {nome} em seu nome:")
+            for chave in contatos_com_nome:
+                print(f"Nome: {chave} \nTelefone: {contatos[chave]['Telefone']} \nE-mail: {contatos[chave]['E-mail']}")
+            voltar_tela_inicial = 0
+            while voltar_tela_inicial != 1:
+                voltar_tela_inicial = int(input("Digite 1 para voltar para tela inicial da agenda: "))
+        else:
+            print(f"Nenhum contato possui a sequência {nome} em seu nome!")
+    print("Voltando para tela inicial em 3s...")
+    time.sleep(3)
 
 def adicionar_contato(contatos, *args):
     if args:
@@ -130,7 +146,7 @@ while escolha != 6:
     mostrar_tela_inicial()
     escolha = int(input())
     if escolha == 1:
-        pesquisar_contato()
+        pesquisar_contato(contatos)
     elif escolha == 2:
         adicionar_contato(contatos)
     elif escolha == 3:
