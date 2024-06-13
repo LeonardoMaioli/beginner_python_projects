@@ -1,4 +1,4 @@
-#Programa para gerenciar uma lista de contatos. Ele permite adicionar, remover, buscar e atualizar informações de um contato. Os contatos são armazenados em um dicionário, onde a chave é o nome e o valor é outro dicionário com detalhes como telefone e email.
+#Programa para gerenciar uma lista de contatos. Ele permite adicionar, remover, buscar e atualizar informações de um contato. Os contatos são armazenados em um dicionário, onde a chave é o nome e o valor é outro dicionário com detalhes como telefone e email. A lista de contatos é exibida em ordem alfabética.
 
 import os
 import time
@@ -26,6 +26,7 @@ def pesquisar_contato(contatos):
     print("|---------------------------------------|")
     print("|         Pesquisa de um contato        |")
     print("|---------------------------------------|")
+
     nome = input("Digite o nome do contato para pesquisa: ")
     if nome in contatos:
         print("\nInformações do contato:\n")
@@ -38,6 +39,7 @@ def pesquisar_contato(contatos):
     else:
         print("Nome de contato não encontrado na sua agenda telefônica!")
         time.sleep(1)
+        contatos = dict(sorted(contatos.items()))
         contatos_com_nome = [chave for chave in contatos if nome in chave]
         if contatos_com_nome:
             print(f"\nSegue a lista de contatos que possuem a sequência {nome} em seu nome:\n")
@@ -146,6 +148,8 @@ def listar_contatos(contatos):
     print("|  Lista de contatos salvos na agenda   |")
     print(" --------------------------------------- ")
 
+    contatos = dict(sorted(contatos.items()))
+
     for nome, info in contatos.items():
         escolha_lista = 0
         print(f"|  Nome: {nome} \n|  Telefone: {info['Telefone']} \n|  E-mail: {info['E-mail']}")
@@ -175,7 +179,7 @@ def limpar_tela():
         os.system('clear')
 
 
-contatos = ({'Leonardo': {'Telefone': '11995847145', 'E-mail': 'leo@gmail.com'}, 'Julyano': {'Telefone': '81990000000', 'E-mail': 'ju@gmail.com'}})
+contatos = ({'Bruno': {'Telefone': '11995847145', 'E-mail': 'bruno@gmail.com'}, 'Julyano': {'Telefone': '81990000000', 'E-mail': 'ju@gmail.com'}})
 
 escolha = 0
 
