@@ -9,7 +9,7 @@
 
 ## _Resumo_
 
-Este repositório contém projetos simples e de nível iniciante para pessoas que estejam iniciando os estudos em Python e desejam aplicar os conceitos estudados em algumas tarefas interessantes, para fixar e melhorar o aprendizado. Cada um dos tópicos seguintes traz informações de um projeto, como o objtivo, os conceitos que foram utilizados para a sua realização, assim como um código criado para execução do projeto.
+Este repositório contém projetos simples e de nível iniciante para pessoas que estejam iniciando os estudos em Python e desejam aplicar os conceitos estudados em algumas tarefas interessantes, para fixar e melhorar o aprendizado. Cada um dos tópicos seguintes traz informações de um projeto, como o objetivo, os conceitos que foram utilizados para a sua realização, assim como um código criado para execução do projeto.
 
 ## _Projeto 1 - Agenda de Contatos_
 
@@ -26,4 +26,4 @@ Alguns conceitos utilizados nesse projeto são:
 * Funções
 * Estruturas de Coleção
 
-O código do projeto pronto pode ser acessado [clicando aqui!][https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/contact_book.py]
+O código do projeto pronto pode ser acessado [clicando aqui!](https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/contact_book.py)
