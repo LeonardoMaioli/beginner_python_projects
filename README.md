@@ -1,4 +1,4 @@
-# Projetos simples e para inicinates utilizando Python
+# Projetos simples e para iniciantes utilizando Python
 
 > Status: em andamento
 
