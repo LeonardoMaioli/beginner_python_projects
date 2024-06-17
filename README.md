@@ -13,7 +13,7 @@ Este repositório contém projetos simples e de nível iniciante para pessoas qu
 
 ## _Projeto 1 - Agenda de Contatos_
 
-O primeiro projeto tem o objetivo da criação de um programa para gerenciar uma aagenda de contatos. O programa a ser criado deve permitir ações como adicionar um novo contato, remover um contato existente, buscar informações de um contato e atualizar informações de um contato. Os contatos devem ser armazenados em um dicionário, onde a chave é o nome do contato e o valor é outro dicionário com detalhes como telefone e email. Quando solicitada, a lista de contatos deve ser exibida em ordem alfabética do nome do contato.
+O primeiro projeto tem o objetivo da criação de um programa para gerenciar uma agenda de contatos. O programa a ser criado deve permitir ações como adicionar um novo contato, remover um contato existente, buscar informações de um contato e atualizar informações de um contato. Os contatos devem ser armazenados em um dicionário, onde a chave é o nome do contato e o valor é outro dicionário com detalhes como telefone e email. Quando solicitada, a lista de contatos deve ser exibida em ordem alfabética do nome do contato.
 
 Alguns conceitos utilizados nesse projeto são:
 
