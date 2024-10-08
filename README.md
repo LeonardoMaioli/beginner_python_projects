@@ -1,4 +1,4 @@
-# Projetos simples e para iniciantes utilizando Python
+# Projetos simples para iniciantes em Python
 
 > Status: em andamento
 
@@ -6,6 +6,7 @@
 
 - <a href="#resumo">Resumo</a>
 - <a href="#agenda-contatos">Projeto 1 - Agenda de Contatos</a>
+- <a href="#">Projeto 2 - Sistema Bancário</a>
 
 ## _Resumo_
 
@@ -13,7 +14,7 @@ Este repositório contém projetos simples e de nível iniciante para pessoas qu
 
 ## _Projeto 1 - Agenda de Contatos_
 
-O primeiro projeto tem o objetivo da criação de um programa para gerenciar uma agenda de contatos. O programa a ser criado deve permitir ações como adicionar um novo contato, remover um contato existente, buscar informações de um contato e atualizar informações de um contato. Os contatos devem ser armazenados em um dicionário, onde a chave é o nome do contato e o valor é outro dicionário com detalhes como telefone e email. Quando solicitada, a lista de contatos deve ser exibida em ordem alfabética do nome do contato.
+O primeiro projeto tem o objetivo da criação de um programa para gerenciar uma agenda de contatos. O programa deve permitir ações como adicionar um novo contato, remover um contato existente, buscar informações de um contato e atualizar informações de um contato. Os contatos devem ser armazenados em um dicionário, onde a chave é o nome do contato e o valor é outro dicionário com detalhes como telefone e email. Quando solicitada, a lista de contatos deve ser exibida em ordem alfabética pelo nome do contato.
 
 Alguns conceitos utilizados nesse projeto são:
 
@@ -26,4 +27,4 @@ Alguns conceitos utilizados nesse projeto são:
 * Funções
 * Estruturas de Coleção
 
-O código do projeto pronto pode ser acessado [clicando aqui!](https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/contact_book.py)
+O arquivo pronto, com um exemplo de código que atende o projeto, pode ser acessado [clicando aqui!](https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/contact_book.py)
