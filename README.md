@@ -27,4 +27,8 @@ Alguns conceitos utilizados nesse projeto são:
 * Funções
 * Estruturas de Coleção
 
-O arquivo pronto, com um exemplo de código que atende o projeto, pode ser acessado [clicando aqui!](https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/contact_book.py)
+O arquivo pronto, com um exemplo de código que atende o projeto, pode ser acessado [clicando aqui](https://github.com/LeonardoMaioli/beginner_python_projects/blob/main/projects/contact_book.py)
+
+## _Projeto 2 - Sistema Bancário_
+
+Esse segundo projeto...
